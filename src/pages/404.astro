@@ -1,0 +1,136 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+  .page-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .page-404 img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 9999px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .page-404 img:hover {
+    transform: scale(1.05);
+  }
+
+  .page-404 h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1;
+    font-weight: 900;
+    color: var(--blue);
+    margin: 0;
+  }
+
+  .page-404 h2 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0 1rem;
+    font-weight: 600;
+  }
+
+  .page-404 p {
+    font-size: 0.95rem;
+    max-width: 360px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .page-404 .author {
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--text-faded);
+    margin-top: 0.5rem;
+  }
+
+  .page-404 a.button {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .page-404 a.button:hover {
+    background: #222;
+  }
+
+  :root {
+    --blue: #3b82f6;
+    --text-muted: #555;
+    --text-faded: #888;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --blue: #60a5fa;
+      --text-muted: #aaa;
+      --text-faded: #777;
+    }
+
+    .page-404 a.button {
+      background: #fff;
+      color: #000;
+    }
+
+    .page-404 a.button:hover {
+      background: #e5e5e5;
+    }
+  }
+</style>
+
+<Layout>
+  <section class="page-404">
+    <img src="/remzikaygusuz.jpg" alt="Remzi Kaygusuz" />
+
+    <h1>404</h1>
+    <h2>Not Found</h2>
+
+    <p id="quote-text">“Loading quote...”</p>
+    <p id="quote-author" class="author">–</p>
+
+    <a href="/" class="button">← Back to homepage</a>
+  </section>
+
+  <script>
+    const fallbackQuotes = [
+      { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" },
+      { text: "404 is just a number. Keep moving.", author: "Anonymous Dev" },
+      { text: "Even a broken link is right twice a day.", author: "Definitely Not Socrates" }
+    ];
+
+    const quoteText = document.getElementById("quote-text");
+    const quoteAuthor = document.getElementById("quote-author");
+
+    fetch("https://api.quotable.io/quotes/random")
+      .then(res => res.json())
+      .then(data => {
+        const quote = data[0]; // assuming array
+        quoteText.textContent = `"${quote.content}"`;
+        quoteAuthor.textContent = `– ${quote.author}`;
+      })
+      .catch(() => {
+        const fallback = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+        quoteText.textContent = `"${fallback.text}"`;
+        quoteAuthor.textContent = `– ${fallback.author}`;
+      });
+  </script>
+</Layout>
+

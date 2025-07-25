@@ -1,11 +1,248 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const year = new Date().getFullYear();
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="flex flex-col gap-16 items-start">
+    <!-- Bio & Contact -->
+    <div class="w-full flex flex-col sm:flex-row sm:items-center gap-6">
+      <div class="flex-1 flex flex-col gap-2">
+        <h1 class="text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
+          Remzi Kaygusuz
+        </h1>
+        <h2
+          class="text-xl sm:text-2xl font-medium text-gray-600 dark:text-gray-300"
+        >
+          Professor of Economics
+        </h2>
+        <div class="text-lg text-gray-500 dark:text-gray-400">
+          Durham University Business School
+        </div>
+        <div class="text-gray-500 dark:text-gray-400">
+          Mill Hill LLane, Durham DH1 3LB, UK
+        </div>
+        <a
+          href="mailto:remzi.kaygusuz@durham.ac.uk"
+          class="hover:underline text-blue-600 dark:text-blue-400 transition"
+          >remzi.kaygusuz@durham.ac.uk</a
+        >
+        <div class="flex gap-4 mt-2">
+          <a
+            href="/cv.pdf"
+            class="px-4 py-2 rounded bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 font-medium shadow hover:bg-gray-700 dark:hover:bg-gray-300 transition"
+            >My CV (October 2023)</a
+          >
+          <a
+            href="https://scholar.google.com/citations?user=2CZKt58AAAAJ"
+            target="_blank"
+            rel="noopener"
+            class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >Google Scholar Page</a
+          >
+        </div>
+      </div>
+      <img src="/remzikaygusuz.jpg" alt="Remzi Kaygusuz" class="hidden sm:block w-48 h-64 rounded-lg object-cover border border-gray-200 dark:border-gray-700 shadow-sm" />
+    </div>
+
+    <!-- LinkedIn-style Minimal Experience List -->
+    <div class="w-full">
+      <div class="w-full flex flex-col gap-2">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Professional Experience</h2>
+        <!-- Durham University -->
+        <div class="flex flex-row items-center gap-4 py-3">
+          <div class="avatar">
+            <div class="w-12">
+              <img src="https://seekvectors.com/files/download/Durham%20University-04.png" alt="Durham University logo" />
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Professor of Economics</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Durham University, UK</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500">2022–Present</div>
+            <div class="text-xs mt-1">Current role</div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <!-- Sabancı University Associate Professor -->
+        <div class="flex flex-row items-center gap-4 py-3">
+          <div class="avatar">
+            <div class="w-12">
+              <img src="https://logowik.com/content/uploads/images/sabanci-university7889.logowik.com.webp" alt="Sabancı University logo" />
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Associate Professor</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Sabancı University, Turkey</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500">2017–2022</div>
+            <div class="text-xs mt-1">Returned and continued research/teaching</div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <!-- Tilburg University -->
+        <div class="flex flex-row items-center gap-4 py-3">
+          <div class="avatar">
+            <div class="w-12">
+              <img src="https://dashboard.up-study.com/upload/School/2021-12/Logo_Tilburg_University_01.png" alt="Tilburg University logo" />
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Visiting Researcher / Faculty</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Tilburg University, Netherlands</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500">2016–2017</div>
+            <div class="text-xs mt-1">One-year international role</div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <!-- Sabancı University Assistant/Associate Professor -->
+        <div class="flex flex-row items-center gap-4 py-3">
+          <div class="avatar">
+            <div class="w-12">
+              <img src="https://logowik.com/content/uploads/images/sabanci-university7889.logowik.com.webp" alt="Sabancı University logo" />
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Assistant / Associate Professor</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Sabancı University, Turkey</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500">2007–2016</div>
+            <div class="text-xs mt-1">Early and mid-career</div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <!-- Penn State -->
+        <div class="flex flex-row items-center gap-4 py-3">
+          <div class="avatar">
+            <div class="w-12">
+              <img src="https://i2.wp.com/logodix.com/logo/1329750.jpg" alt="Penn State logo" />
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Ph.D. in Economics</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Pennsylvania State University, USA</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500">2001–2007</div>
+            <div class="text-xs mt-1">Doctoral studies</div>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <!-- Boğaziçi University -->
+        <div class="flex flex-row items-center gap-4 py-3">
+          <div class="avatar">
+            <div class="w-12">
+              <img src="https://www.wearefreemovers.com/wp-content/uploads/2020/10/Bogazici-University-logo.png" alt="Boğaziçi University logo" />
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">B.A. in Economics</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Boğaziçi University, Turkey</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500">1995–1999</div>
+            <div class="text-xs mt-1">Undergraduate studies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="w-full border-t border-gray-200 dark:border-gray-800" />
+
+    <!-- Working Papers -->
+    <div class="w-full">
+      <h2 class="text-2xl font-semibold mb-4">Working Papers</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <span class="font-semibold"
+            >A Different World: Drivers of Income Inequality 1980-2020</span
+          > (with Nezih Guner and Gustavo Ventura).
+        </li>
+      </ul>
+    </div>
+
+    <hr class="w-full border-t border-gray-200 dark:border-gray-800" />
+
+    <!-- Works in Progress -->
+    <div class="w-full">
+      <h2 class="text-2xl font-semibold mb-4">Works in Progress</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          Child-Related Transfers and Earnings Inequality: A Cross Country
+          Analysis.
+        </li>
+        <li>
+          Progressivity of Income Taxation, Redistribution and Households.
+        </li>
+        <li>Optimal Progressivity of Taxation with Immigrant Workers.</li>
+      </ul>
+    </div>
+
+    <hr class="w-full border-t border-gray-200 dark:border-gray-800" />
+
+    <!-- Publications -->
+    <div class="w-full">
+      <h2 class="text-2xl font-semibold mb-4">Publications</h2>
+      <ul class="flex flex-col gap-4">
+        <li>
+          <span class="font-semibold">Rethinking the Welfare State</span> (with Nezih
+          Guner and Gustavo Ventura), <span class="italic">Econometrica</span>,
+          August 2023.
+        </li>
+        <li>
+          <span class="font-semibold"
+            >Child-Related Transfers, Household Labor Supply and Welfare</span
+          > (with Nezih Guner and Gustavo Ventura), <span class="italic"
+            >The Review of Economic Studies</span
+          >, 2020.
+        </li>
+        <li>
+          <span class="font-semibold"
+            >Social Security and Two-Earner Households</span
+          >, <span class="italic">Journal of Economic Dynamics and Control</span
+          >, 2015.
+        </li>
+        <li>
+          <span class="font-semibold"
+            >Income Taxation of U.S. Households: Facts and Parametric Estimates</span
+          > (with Nezih Guner and Gustavo Ventura), <span class="italic"
+            >Review of Economic Dynamics</span
+          >, 2014. <span class="text-xs text-gray-500">(lead article)</span>
+        </li>
+        <li>
+          <span class="font-semibold">Taxation and Household Labor Supply</span>
+          (with Nezih Guner and Gustavo Ventura), <span class="italic"
+            >The Review of Economic Studies</span
+          >, 2012.
+        </li>
+        <li>
+          <span class="font-semibold"
+            >Taxing Women: A Macroeconomic Analysis</span
+          > (with Nezih Guner and Gustavo Ventura), <span class="italic"
+            >Journal of Monetary Economics</span
+          >, 2012.
+        </li>
+        <li>
+          <span class="font-semibold">Taxes and Female Labor Supply</span>, <span
+            class="italic">Review of Economic Dynamics</span
+          >, 2010. <span class="text-xs text-gray-500">(lead article)</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer class="w-full mt-20 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 dark:text-slate-400 space-y-4 md:space-y-0">
+    
+    <!-- Left: Copyright -->
+    <div>
+	© { String(year) } Remzi Kaygusuz. All rights reserved.
+    </div>
+
+    <!-- Right: Links -->
+    <div class="flex space-x-4">
+      <a href="/cv.pdf" class="hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition">CV</a>
+      <a href="https://scholar.google.com/citations?user=REPLACE_ID" target="_blank" rel="noopener" class="hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition">
+        Google Scholar
+      </a>
+      <a href="mailto:remzi.kaygusuz@durham.ac.uk" class="hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition">
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
+
 </Layout>

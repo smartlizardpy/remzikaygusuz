@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+const year = new Date().getFullYear();
+---
+
+<Layout>
+  <section class="flex flex-col items-center justify-center min-h-[60vh] py-12 gap-8">
+    <div class="flex flex-col items-center gap-4">
+      <div class="w-28 h-28 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-3xl font-bold text-gray-400">
+        <img src="/remzikaygusuz.jpg" alt="Remzi Kaygusuz" class="w-full h-full object-cover rounded-full" />
+      </div>
+      <h1 class="text-3xl font-bold">About Me</h1>
+      <h2 class="text-xl text-gray-600 dark:text-gray-300">Remzi Kaygusuz</h2>
+      <div class="text-gray-500 dark:text-gray-400">Professor of Economics, Durham University</div>
+    </div>
+    <hr class="w-full max-w-xl border-t border-gray-200 dark:border-gray-800 my-4" />
+    <div class="max-w-2xl text-lg text-gray-700 dark:text-gray-300 text-center">
+      <p>
+        I am a Professor of Economics at Durham University Business School. My research focuses on public economics, taxation, household labor supply, and welfare policy. I have published in leading journals such as Econometrica, The Review of Economic Studies, and the Review of Economic Dynamics. My work often explores the intersection of policy, inequality, and macroeconomic outcomes, with a particular interest in the effects of taxation and transfers on households.
+      </p>
+    </div>
+  </section>
+  <footer class="w-full mt-20 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500 dark:text-slate-400 space-y-4 md:space-y-0">
+    
+    <!-- Left: Copyright -->
+    <div>
+      © {year} Remzi Kaygusuz. All rights reserved.
+    </div>
+
+    <!-- Right: Links -->
+    <div class="flex space-x-4">
+      <a href="/cv.pdf" class="hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition">CV</a>
+      <a href="https://scholar.google.com/citations?user=REPLACE_ID" target="_blank" rel="noopener" class="hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition">
+        Google Scholar
+      </a>
+      <a href="mailto:remzi.kaygusuz@durham.ac.uk" class="hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition">
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
+
+</Layout> 
